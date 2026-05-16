@@ -23,7 +23,7 @@ class Program
                 // Console.WriteLine("You Select 1. Write");
                 string prompt = newPrompts.GetRandomPrompt();
                 Console.WriteLine($"{prompt}");
-                Console.WriteLine("");
+                Console.Write(">  ");
                 string respText = Console.ReadLine();
                 //Console.WriteLine(respText);
 
@@ -38,27 +38,33 @@ class Program
             }
             else if (option == 2)
             {
-                Console.WriteLine("");
+                Console.WriteLine();
                 // Console.WriteLine("You Selected 2. Display");
                 myJournal.DisplayAll();
             }
             else if (option == 3)
             {
-                Console.WriteLine("");
-                Console.WriteLine("You Selected 3. Load");
-                Console.WriteLine("");
+                Console.WriteLine();
+                Console.WriteLine("Read File:");
+                Console.WriteLine("what is your filename? ");
+                Console.Write(">  ");
+                string fileName = Console.ReadLine();
+                myJournal.LoadFromFile(fileName);
             }
             else if (option == 4)
             {
-                Console.WriteLine("");
-                Console.WriteLine("You Selected 4. Save");
-                Console.WriteLine("");
+                Console.WriteLine();
+                Console.WriteLine("Load File:");
+                Console.WriteLine("what is your filename? ");
+                Console.Write(">  ");
+                string fileName = Console.ReadLine();
+                myJournal.SaveToFile(fileName);
             }
             else if (option == 5)
             {
-                Console.WriteLine("");
-                Console.WriteLine("You Selected 5. Quit");
-                Console.WriteLine("");
+                Console.WriteLine();
+                Console.WriteLine("Good Bye");
+                Console.WriteLine();
             }
         }
 
