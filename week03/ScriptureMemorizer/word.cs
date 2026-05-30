@@ -1,25 +1,46 @@
 using System.Dynamic;
+using System.Reflection.PortableExecutable;
 
 public class Word
 {
     private string _text;
     private bool _isHidden;
 
+    public Word(string txtWord)
+    {
+        _text = txtWord;
+        Show();
+    }
+
     public void Hide()
     {
-        _isHidden = false;
+        _isHidden = true;
     }
     public void Show()
     {
-        _isHidden = true;
+        _isHidden = false;
     }
 
     public bool isHidden()
     {
         return _isHidden;
     }
+
     public string GetDisplayText()
     {
-        return _text;
+        string txtReturn = "";
+        if (isHidden())
+        {
+            foreach (char _char in _text)
+            {
+                txtReturn = $"{txtReturn}_";
+            }
+        }
+        else
+        {
+            txtReturn = _text;
+        }
+
+        return txtReturn;
     }
 }
