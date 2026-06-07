@@ -19,9 +19,9 @@ public class Activity
     {
         Console.WriteLine();
         Console.WriteLine("Well Done!");
-        ShowSpinner(5);
+        ShowSpinner(3);
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity,");
-        ShowSpinner(5);
+        ShowSpinner(8);
         Console.Clear();
 
     }
@@ -44,7 +44,7 @@ public class Activity
         while (DateTime.Now < endTime)
         {
             Console.Write(animationString[listIndex]);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.Write("\b \b");
 
             listIndex++;

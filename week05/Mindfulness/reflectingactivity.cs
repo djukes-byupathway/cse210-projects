@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 public class ReflectingActivity : Activity
 {
     //attributes or properties
@@ -40,26 +41,63 @@ public class ReflectingActivity : Activity
         ShowSpinner(5);
         Console.WriteLine();
 
+        DisplayPrompt();
+        Console.ReadLine();
+        Console.WriteLine();
+        Console.WriteLine("Now Ponder on each of the following questions as they relate to this experience.");
+        Console.Write("You may begin in: ");
+        ShowCountDown(3);
+
+
+        DisplayQuestions();
+
         DisplayEndingMessage();
     }
 
     public string GetRandomPrompt()
     {
-        return "random prompt";
+        Random rng = new Random();
+        int randomIndex = rng.Next(_prompts.Count);
+        string prompt = _prompts[randomIndex];
+
+        return $"--- {prompt} ---";
     }
 
     public string GetRandomQuestion()
     {
-        return "Random Question";
+        Random rng = new Random();
+        int randomIndex = rng.Next(_questions.Count);
+        string question = _questions[randomIndex];      
+        
+        return $"> {question}";
     }
 
     public void DisplayPrompt()
     {
+        string myPrompt = GetRandomPrompt();
+
+        Console.WriteLine();
+        Console.WriteLine("Consider the following prompt: ");
+        Console.WriteLine();
+        Console.WriteLine(myPrompt);
+        Console.WriteLine();
+        Console.WriteLine("When you have something in mind, press enter to continue.");
 
     }
     public void DisplayQuestions()
     {
-
+        Console.Clear();
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(Duration);
+        
+        while (DateTime.Now < endTime)
+        {
+            // Need to Show Random Question
+                Console.Write(GetRandomQuestion());
+                ShowSpinner(12);
+                Console.WriteLine();
+            
+        }
     }
-
 }
+
