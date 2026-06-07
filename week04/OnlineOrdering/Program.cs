@@ -28,7 +28,7 @@ class Program
         Customer cust2 = new Customer("Amy Jukes", addr2);
         Product prod4 = new Product("lipstick", "mkup001", 10.67, 2);
         Product prod5 = new Product("eye liner", "mkup001", 9.35, 3);
-        List<Product> products2 = [prod4, prod5];
+        List<Product> products2 = [prod4, prod5]; //
         Order ord2 = new Order(cust2, products2);
 
         Console.WriteLine();

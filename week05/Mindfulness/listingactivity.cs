@@ -17,7 +17,14 @@ public class ListingActivity : Activity
     //behaviors or methods
     public void Run()
     {
+        DisplayStartingMessage();
+        Duration = int.Parse(Console.ReadLine());
+        Console.Clear();
+        Console.WriteLine("Get Ready");
+        ShowSpinner(5);
+        Console.WriteLine();
 
+        DisplayEndingMessage();
     }
 
     public string GetRandomPrompt()

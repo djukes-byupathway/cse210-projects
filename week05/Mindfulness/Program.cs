@@ -5,47 +5,47 @@ class Program
     static void Main(string[] args)
     {
         // Console.WriteLine("Hello World! This is the Mindfulness Project.");
-        Program myProgram = new Program();
-
-        Console.WriteLine("Welcome to the Mindfulness Program.");
-        myProgram.DisplayMenu();
+        DisplayMenu();
         int response = int.Parse(Console.ReadLine());
 
         while (response != 4)
         {
             if (response == 1)
             {
-                Console.WriteLine("breathing activity not ready yet please select another"); // replace when breathing activity coding is done
+                BreathingActivity myBreathing = new BreathingActivity();
+                myBreathing.Run();
             }
             else if (response == 2)
             {
-                Console.WriteLine("reflecting activity not ready yet please select another"); // replace when breathing activity coding is done
+                ReflectingActivity myReflecting = new ReflectingActivity();
+                myReflecting.Run();
             }
             else if (response == 3)
             {
-                Console.WriteLine("listing activity not ready yet please select another"); // replace when breathing activity coding is done
+                ListingActivity myListing = new ListingActivity();
+                myListing.Run();
             }
             else if (response == 4)
             {
-                Console.WriteLine(); // replace when breathing activity coding is done
+                Console.WriteLine(); 
             }
             else
             {
-                Console.WriteLine("Please Enter a valid option");  
+                Console.WriteLine("Please Enter a valid option");
             }
 
-
-            myProgram.DisplayMenu();
+            DisplayMenu();
             response = int.Parse(Console.ReadLine());
         }
 
-
-        Console.WriteLine("Goodby and have a great day!");
+        Console.WriteLine("Goodbye and have a great day!");
         Console.WriteLine();
     }
     
-    public void DisplayMenu()
+    
+    static public void DisplayMenu()
     {
+        Console.WriteLine("Welcome to the Mindfulness Program.");
         Console.WriteLine();
         Console.WriteLine("Menu Options");
         Console.WriteLine("1. Start breathing activity");

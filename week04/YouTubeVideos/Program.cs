@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 
 class Program
 {
-// The list of videos
+    // The list of videos
     static List<Video> _videos = [];
-//This array is for the initial data population of video titles
+    //This array is for the initial data population of video titles
     static string[] _videoTitles = { "Jam Boogie", "Redneckin'", "Who Am I?", "The Name is ..." };
-//this array is for populating the authors, the index matches the titles
+    //this array is for populating the authors, the index matches the titles
     static string[] _authors = ["Joe Blow", "Joe Dirt", "Jane Doe", "James Bond"];
     //this array is for populating the lengths, the index matches the titles
     static int[] _lengths = [60, 75, 85, 3600];
@@ -36,7 +36,7 @@ class Program
         "Dr. Julius No",
 
     ];
-//just like with the comment authors, index matches comment author
+    //just like with the comment authors, index matches comment author
     static string[] _commentTexts = [
         "This Jam is on Fyre!!!",
         "Boogie this",
@@ -66,7 +66,7 @@ class Program
         //start with collection
         _videos = getVideoCollection();
 
-foreach (Video video in _videos)
+        foreach (Video video in _videos)
         {
             video.displayVideo();
         }
@@ -75,7 +75,7 @@ foreach (Video video in _videos)
 
     }
 
-private static List<Video> getVideoCollection()
+    private static List<Video> getVideoCollection()
     {
         List<Video> videos = [];
 
